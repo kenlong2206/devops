@@ -1,0 +1,243 @@
+2024-07-06 10:59:43,012:: root:: INFO:: read_root:: Welcome message
+2024-07-06 10:59:43,015:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 10:59:43,033:: root:: INFO:: calculate:: Add operation
+2024-07-06 10:59:43,034:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 10:59:43,038:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 10:59:43,039:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 10:59:43,043:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 10:59:43,044:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 10:59:43,048:: root:: INFO:: calculate:: Divide operation
+2024-07-06 10:59:43,050:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 10:59:43,053:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 10:59:43,054:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 10:59:43,060:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 10:59:43,061:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 10:59:43,066:: root:: INFO:: calculate:: Add operation
+2024-07-06 10:59:43,067:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:20:46,619:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:21:56,858:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:23:27,745:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:25:53,509:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:26:37,597:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:26:51,766:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:31:31,277:: root:: INFO:: read_root:: Welcome message
+2024-07-06 21:31:31,279:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 21:31:31,339:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:31:31,343:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:31:31,344:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:31:31,347:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 21:31:31,348:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:31:31,351:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 21:31:31,352:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:31:31,356:: root:: INFO:: calculate:: Divide operation
+2024-07-06 21:31:31,357:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:31:31,360:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 21:31:31,361:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:31:31,365:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 21:31:31,366:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:31:31,369:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:31:31,370:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:33:52,645:: root:: INFO:: read_root:: Welcome message
+2024-07-06 21:33:52,647:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 21:33:52,714:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:33:52,717:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:33:52,719:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:33:52,722:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 21:33:52,724:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:33:52,727:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 21:33:52,728:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:33:52,732:: root:: INFO:: calculate:: Divide operation
+2024-07-06 21:33:52,733:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:33:52,736:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 21:33:52,737:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:33:52,741:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 21:33:52,742:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:33:52,746:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:33:52,748:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:34:11,359:: root:: INFO:: read_root:: Welcome message
+2024-07-06 21:34:11,362:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 21:34:11,423:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:34:11,426:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:34:11,427:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:34:11,430:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 21:34:11,431:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:34:11,434:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 21:34:11,435:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:34:11,438:: root:: INFO:: calculate:: Divide operation
+2024-07-06 21:34:11,440:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:34:11,443:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 21:34:11,444:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:34:11,447:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 21:34:11,448:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:34:11,451:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:34:11,454:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:40:38,717:: root:: INFO:: read_root:: Welcome message
+2024-07-06 21:40:38,720:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 21:40:38,786:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:40:38,790:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:40:38,792:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:40:38,796:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 21:40:38,798:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:40:38,802:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 21:40:38,803:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:40:38,808:: root:: INFO:: calculate:: Divide operation
+2024-07-06 21:40:38,809:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:40:38,813:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 21:40:38,814:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:40:38,818:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 21:40:38,819:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:40:38,823:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:40:38,825:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:40:59,925:: root:: INFO:: read_root:: Welcome message
+2024-07-06 21:40:59,927:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 21:40:59,992:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:40:59,995:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:40:59,996:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:40:59,999:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 21:41:00,002:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:41:00,006:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 21:41:00,009:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:41:00,014:: root:: INFO:: calculate:: Divide operation
+2024-07-06 21:41:00,016:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:41:00,021:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 21:41:00,022:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:41:00,027:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 21:41:00,028:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:41:00,032:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:41:00,033:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:47:52,351:: root:: INFO:: read_root:: Welcome message
+2024-07-06 21:47:52,353:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 21:47:52,414:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:47:52,417:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:47:52,418:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:47:52,422:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 21:47:52,423:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:47:52,426:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 21:47:52,427:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:47:52,430:: root:: INFO:: calculate:: Divide operation
+2024-07-06 21:47:52,431:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:47:52,434:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 21:47:52,435:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:47:52,438:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 21:47:52,439:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:47:52,443:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:47:52,444:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:54:37,650:: root:: INFO:: read_root:: Welcome message
+2024-07-06 21:54:37,652:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 21:54:37,712:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:54:37,716:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:54:37,717:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:54:37,720:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 21:54:37,721:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:54:37,724:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 21:54:37,725:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:54:37,728:: root:: INFO:: calculate:: Divide operation
+2024-07-06 21:54:37,729:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:54:37,732:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 21:54:37,734:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:54:37,737:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 21:54:37,738:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:54:37,741:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:54:37,742:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:55:47,494:: root:: INFO:: read_root:: Welcome message
+2024-07-06 21:55:47,496:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 21:55:47,562:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:55:47,566:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:55:47,567:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:55:47,571:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 21:55:47,572:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:55:47,575:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 21:55:47,577:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:55:47,580:: root:: INFO:: calculate:: Divide operation
+2024-07-06 21:55:47,582:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:55:47,585:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 21:55:47,586:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:55:47,589:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 21:55:47,591:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:55:47,595:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:55:47,596:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:56:18,827:: root:: INFO:: read_root:: Welcome message
+2024-07-06 21:56:18,830:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 21:56:18,897:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:56:18,901:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:56:18,903:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:56:18,907:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 21:56:18,909:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:56:18,913:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 21:56:18,914:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:56:18,918:: root:: INFO:: calculate:: Divide operation
+2024-07-06 21:56:18,919:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:56:18,922:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 21:56:18,923:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:56:18,928:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 21:56:18,929:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:56:18,933:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:56:18,934:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:56:24,723:: root:: INFO:: read_root:: Welcome message
+2024-07-06 21:56:24,724:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 21:56:24,769:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 21:56:24,772:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:56:24,773:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:56:24,775:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 21:56:24,776:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:56:24,779:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 21:56:24,779:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:56:24,781:: root:: INFO:: calculate:: Divide operation
+2024-07-06 21:56:24,782:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 21:56:24,785:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 21:56:24,785:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:56:24,788:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 21:56:24,789:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 21:56:24,791:: root:: INFO:: calculate:: Add operation
+2024-07-06 21:56:24,791:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 22:16:58,098:: root:: INFO:: read_root:: Welcome message
+2024-07-06 22:16:58,099:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-06 22:16:58,144:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-06 22:16:58,147:: root:: INFO:: calculate:: Add operation
+2024-07-06 22:16:58,147:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 22:16:58,150:: root:: INFO:: calculate:: Subtract operation
+2024-07-06 22:16:58,150:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 22:16:58,153:: root:: INFO:: calculate:: Multiply operation
+2024-07-06 22:16:58,153:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 22:16:58,155:: root:: INFO:: calculate:: Divide operation
+2024-07-06 22:16:58,156:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-06 22:16:58,159:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-06 22:16:58,160:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 22:16:58,162:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-06 22:16:58,163:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-06 22:16:58,165:: root:: INFO:: calculate:: Add operation
+2024-07-06 22:16:58,166:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-07 00:06:48,798:: root:: INFO:: read_root:: Welcome message
+2024-07-07 00:06:48,800:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-07 00:06:48,867:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-07 00:06:48,871:: root:: INFO:: calculate:: Add operation
+2024-07-07 00:06:48,873:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-07 00:06:48,877:: root:: INFO:: calculate:: Subtract operation
+2024-07-07 00:06:48,879:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-07 00:06:48,883:: root:: INFO:: calculate:: Multiply operation
+2024-07-07 00:06:48,884:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-07 00:06:48,888:: root:: INFO:: calculate:: Divide operation
+2024-07-07 00:06:48,889:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-07 00:06:48,893:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-07 00:06:48,894:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-07 00:06:48,898:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-07 00:06:48,899:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-07 00:06:48,902:: root:: INFO:: calculate:: Add operation
+2024-07-07 00:06:48,903:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-07 00:07:00,918:: root:: INFO:: read_root:: Welcome message
+2024-07-07 00:07:00,919:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2024-07-07 00:07:00,963:: httpx:: INFO:: _send_single_request:: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2024-07-07 00:07:00,966:: root:: INFO:: calculate:: Add operation
+2024-07-07 00:07:00,967:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-07 00:07:00,969:: root:: INFO:: calculate:: Subtract operation
+2024-07-07 00:07:00,970:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-07 00:07:00,972:: root:: INFO:: calculate:: Multiply operation
+2024-07-07 00:07:00,972:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-07 00:07:00,975:: root:: INFO:: calculate:: Divide operation
+2024-07-07 00:07:00,976:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
+2024-07-07 00:07:00,978:: root:: WARNING:: calculate:: User error - divide by zero
+2024-07-07 00:07:00,978:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-07 00:07:00,981:: root:: WARNING:: calculate:: User error - Invalid operation
+2024-07-07 00:07:00,981:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 400 Bad Request"
+2024-07-07 00:07:00,984:: root:: INFO:: calculate:: Add operation
+2024-07-07 00:07:00,984:: httpx:: INFO:: _send_single_request:: HTTP Request: POST http://testserver/calculate "HTTP/1.1 200 OK"
