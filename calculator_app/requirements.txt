@@ -4,4 +4,3 @@ pytest
 pydantic
 pytest-cov
 psutil
-socket
