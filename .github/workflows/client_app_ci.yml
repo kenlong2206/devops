@@ -1,0 +1,113 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - feature-*
+      - release-*
+    paths:
+      - 'client_app/**'
+  pull_request:
+    branches:
+      - master
+      - develop
+      - feature-*
+      - release-*
+    paths:
+      - 'client_app/**'
+
+jobs:
+  test:
+# *************************************** ENVIRONMENT SETUP ***************************************
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Disable shallow clone
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        python -m pip install --upgrade pip
+        pip install -r client_app/requirements.txt
+
+    - name: Set up PYTHONPATH
+      run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
+
+    - name: Create directories
+      run: |
+        mkdir -p client_app/tests/test_reports
+        mkdir -p client_app/logs
+
+# *************************************** UNIT TESTING ***************************************
+    - name: Run tests with coverage
+      run: |
+        source venv/bin/activate
+        python -m pytest
+        ls -l client_app/tests/test_reports
+
+# *************************************** STATIC SCANNING ***************************************
+    - name: Upload coverage to SonarCloud
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        args: >
+          -Dsonar.host.url=https://sonarcloud.io 
+          -Dsonar.python.version=3
+          -Dsonar.branch.name=${{ github.ref_name }}
+          -Dsonar.sources=client_app/src/
+          -Dsonar.python.xunit.reportPath=client_app/tests/test_reports/xunit-result.xml
+          -Dsonar.python.coverage.reportPaths=client_app/tests/test_reports/coverage.xml
+          -Dsonar.exclusions=**/tests/**,**/__init__.py
+
+# ************************************* CONTAINERISE ***************************************
+    - name: Build Docker image
+      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/calculator-app:latest .
+
+    - name: Log into Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    - name: Push Docker image to Docker Hub
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/calculator-app:latest
+
+    - name: Pull Docker image from Docker Hub, run it and verify it is running correctly
+      run: |
+        docker pull ${{ secrets.DOCKERHUB_USERNAME }}/calculator-app:latest
+        docker run -d -p 8000:8000 ${{ secrets.DOCKERHUB_USERNAME }}/calculator-app:latest
+
+# *************************************** INTEGRATION TESTING ***************************************
+    - name: Install Newman
+      run: |
+        npm install -g newman
+        npm install -g newman-reporter-html
+
+    - name: Run Postman tests against docker container
+      run: newman run './client_app/tests/integration/calculator_integration_tests.postman_collection.json' --reporters html --reporter-html-export './client_app/tests/test_reports/calculator_integration_tests_report.html'
+
+# *************************************** UPLOAD ARTIFACTS ***************************************
+    - name: Upload test reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: test_reports
+        path: ./client_app/tests/test_reports
+
+    - name: Upload log file
+      uses: actions/upload-artifact@v4
+      with:
+        name: calculator_log.txt
+        path: ./client_app/logs
