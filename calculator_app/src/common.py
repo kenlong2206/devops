@@ -11,6 +11,7 @@ def get_version(app_name):
         version = '0.0.0'
     return version
 
+
 def get_git_branch():
     try:
         result = subprocess.run(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], capture_output=True, text=True)
