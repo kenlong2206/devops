@@ -130,3 +130,5 @@ dmypy.json
 # log files
 logs/
 test_reports/
+/calculator_app/logs/
+/calculator_app/tests/test_reports/
