@@ -4,7 +4,6 @@ from pydantic import BaseModel
 from calculator_app.src.logging_setup import setup_logging
 from calculator_app.src.common import get_version, get_git_branch
 from datetime import datetime
-import psutil  # to get system util infor for health check
 import os  # to run os commands
 import socket  # to get hostname
 
@@ -33,8 +32,6 @@ def health():
     current_time = datetime.now()
     uptime = current_time - start_time
     hostname = socket.gethostname()
-    memory_info = psutil.virtual_memory()
-    cpu_usage = psutil.cpu_percent()
     started_by = os.getenv('STARTED_BY', 'unknown_user')  # default to unknown_user if env variable not set
 
     health_info = {

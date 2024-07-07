@@ -32,8 +32,6 @@ def test_health():
     assert "hostname" in data
     assert "environment" in data
     assert "started_by" in data
-    assert "memory_usage" in data
-    assert "cpu_usage" in data
     assert "git_branch" in data
 
 

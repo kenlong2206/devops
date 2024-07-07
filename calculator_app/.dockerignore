@@ -2,9 +2,17 @@
 # Ignore these files and directories
 node_modules
 dist
+logs
 .git
-.gitignore
-.DS_Store
-
-# Do not ignore .coveragerc
-!.coveragerc
+.idea
+__pycache__
+*.pyc
+tests/test_reports
+*.pytest_cache
+.env
+.venv
+Dockerfile
+docker-compose.yml
+.github
+docs
+*.md

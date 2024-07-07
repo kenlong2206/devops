@@ -3,5 +3,3 @@ uvicorn
 pytest
 pydantic
 pytest-cov
-psutil
-pytest

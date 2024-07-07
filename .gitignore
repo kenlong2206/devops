@@ -127,8 +127,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# log files
-logs/
-test_reports/
+# manual additions
 /calculator_app/logs/
 /calculator_app/tests/test_reports/
