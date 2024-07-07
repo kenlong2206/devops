@@ -1,14 +1,14 @@
-# devops/common/src/common.py
+# devops/common/src/healthcheck.py
 import os
 import subprocess
 
 def get_version(app_name):
-    version_file = f'./{app_name}/version.txt'
+    version_file = f'../{app_name}/version.txt'
     try:
         with open(version_file, 'r') as file:
             version = file.read().strip()
     except FileNotFoundError:
-        version = '0.0.0'
+        version = 'version file not found'
     return version
 
 

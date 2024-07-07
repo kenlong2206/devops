@@ -3,7 +3,7 @@
 import os
 from fastapi.testclient import TestClient
 from calculator_app.src.main import app
-from calculator_app.src.logging_setup import setup_logging
+from calculator_app.src.log import setup_logging
 
 # Create a test client using FastAPI's TestClient
 client = TestClient(app)
@@ -27,6 +27,7 @@ def test_health():
 
     data = response.json()
     assert "version" in data
+    assert response.json()["app_name"] == "calculator_app"
     assert "uptime" in data
     assert "started_time" in data
     assert "hostname" in data

@@ -1,8 +1,8 @@
 # main.py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from calculator_app.src.logging_setup import setup_logging
-from calculator_app.src.common import get_version, get_git_branch
+from calculator_app.src.log import setup_logging
+from calculator_app.src.healthcheck import get_version, get_git_branch
 from datetime import datetime
 import os  # to run os commands
 import socket  # to get hostname
@@ -27,6 +27,7 @@ class CalculationRequest(BaseModel):
 # Define routes
 @app.get("/health")
 def health():
+    logger.info("Health-check")
     version = get_version('calculator_app')  # set in version.txt file
     git_branch = get_git_branch()
     current_time = datetime.now()
@@ -36,6 +37,7 @@ def health():
 
     health_info = {
         "status": "OK",
+        "app_name": "calculator_app",
         "version": version,
         "uptime": str(uptime),
         "started_time": start_time.strftime("%Y-%m-%d %H:%M:%S"),

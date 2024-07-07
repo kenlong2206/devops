@@ -1,0 +1,15 @@
+[run]
+relative_files = True
+branch = True
+source = src
+data_file = tests/test_reports/.coverage
+omit =
+    */tests/*
+    */__init__.py
+
+[report]
+show_missing = true
+skip_covered = false
+exclude_lines =
+    if __name__ == .__main__.:
+

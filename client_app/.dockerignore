@@ -1,0 +1,18 @@
+# .dockerignore
+# Ignore these files and directories
+node_modules
+dist
+logs
+.git
+.idea
+__pycache__
+*.pyc
+tests/test_reports
+*.pytest_cache
+.env
+.venv
+Dockerfile
+docker-compose.yml
+.github
+docs
+*.md
