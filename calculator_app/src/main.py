@@ -42,8 +42,6 @@ def health():
         "hostname": hostname,
         "environment": os.getenv('ENVIRONMENT', 'development'),
         "started_by": started_by,
-        "memory_usage": f"{memory_info.percent}%",
-        "cpu_usage": f"{cpu_usage}%",
         "git_branch": git_branch
     }
 
