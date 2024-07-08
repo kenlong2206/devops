@@ -8,8 +8,58 @@
 ___
 
 
+## Objective
+To create a simple application to act as a template for a fully automated devops pipeline to build, test and deploy the services.
+It is made up of 2 microservices so full integration testing can be performed.
+The 2 services are as follows:
+- **calculator_app:** REST API to receive 2 numbers and an operator (+, -, *, /) and return the result
+- **client_app:** pass numbers and an operator to calculator_app API display the result on a simple UI
 
-## Directory Structure
+Both services have a openAPI interface (/docs) and a `/health` endpoint to return details about the application
+Devops pipeline built with github actions as follows:
+
+- [x] Build
+- [x] Unit test (pytest)
+- [x] Lint
+- [x] Sonar scan
+- [x] Quality gates
+- [x] Create docker image for each service
+- [x] Tag docker images
+- [x] Docker compose to deploy multiple services
+- [x] Docker container for each service
+- [x] Integration test
+- [ ] Contract test
+- [ ] Performance test
+- [ ] Chaos test
+- [ ] AWS deployment
+- [ ] Kubenetes container management
+- [ ] Terraform IaaC
+- [ ] Blue/green deployment
+- [ ] Canary deployment
+- [ ] Istio service mesh
+- [ ] ELK stack
+- [ ] Prometheus monitoring
+- [ ] Grafana dashboards
+
+## File Structure
+      devops/
+        ├── xxxxx_app/
+        │   ├── Dockerfile
+        │   ├── requirements.txt
+        │   ├── pytest.ini
+        │   ├── sonar-project-properties
+        │   ├── version.txt
+        │   ├── src/
+        │   │   ├── static
+        │   │   └── templates
+        │   └── tests/
+        │       ├── test_reports
+        │       ├── integration
+        │       └── unit
+        ├── common/
+        │   └── ... (common files)
+        └── docker-compose.yml
+
 - all code in `src` directory
 - all tests in `tests` directory. Unit tests in `unit`. Other directories to be created as more testing is added 
 - all test results in `tests/test_reports`
