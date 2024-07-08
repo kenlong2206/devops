@@ -2,8 +2,8 @@
 
 import os
 from fastapi.testclient import TestClient
-from calculator_app.src.main import app
-from calculator_app.src.log import setup_logging
+from src.main import app
+from src.log import setup_logging
 
 # Create a test client using FastAPI's TestClient
 client = TestClient(app)

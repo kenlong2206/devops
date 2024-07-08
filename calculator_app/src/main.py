@@ -1,8 +1,8 @@
 # main.py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from calculator_app.src.log import setup_logging
-from calculator_app.src.healthcheck import get_version, get_git_branch
+from src.log import setup_logging
+from src.healthcheck import get_version, get_git_branch
 from datetime import datetime
 import os  # to run os commands
 import socket  # to get hostname
