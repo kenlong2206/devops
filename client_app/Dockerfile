@@ -7,28 +7,28 @@ FROM python:3.12-alpine
 WORKDIR /app
 
 # Copy requirements file and install dependencies
-COPY calculator_app/requirements.txt /app/calculator_app/requirements.txt
+COPY client_app/requirements.txt /app/client_app/requirements.txt
 
 # Install dependencies
-RUN pip install --no-cache-dir -r /app/calculator_app/requirements.txt
+RUN pip install --no-cache-dir -r /app/client_app/requirements.txt
 
 # Copy the entire project into the container
-COPY calculator_app /app/calculator_app
+COPY client_app /app/client_app
 COPY common /app/common
 
 # Create a volume to persist logs
-VOLUME ["/app/calculator_app/logs"]
+VOLUME ["/app/client_app/logs"]
 
 # Ensure the log directory and file exist and set appropriate permissions
-RUN mkdir -p /app/calculator_app/logs && touch /app/calculator_app/logs/calculator_log.txt && chmod -R 777 /app/calculator_app/logs
+RUN mkdir -p /app/client_app/logs && touch /app/client_app/logs/client_log.txt && chmod -R 777 /app/client_app/logs
 
 # Define environment variables
 ENV PYTHONUNBUFFERED=1
-ENV PYTHONPATH=.:/app:/app/calculator_app:/app/calculator_app/src:/app/common/src
+ENV PYTHONPATH=.:/app:/app/client_app:/app/client_app/src:/app/common/src
 ENV STARTED_BY=docker
 
 # Expose the port your app runs on (if applicable)
-EXPOSE 8000
+EXPOSE 9000
 
 # Command to run your application
-CMD ["uvicorn", "calculator_app.src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "client_app.src.main:app", "--host", "0.0.0.0", "--port", "9000", "--reload"]

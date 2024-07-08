@@ -130,3 +130,8 @@ dmypy.json
 # manual additions
 /calculator_app/logs/
 /calculator_app/tests/test_reports/
+/client_app/logs/
+/client_app/tests/test_reports/
+/ccommon/logs/
+/common/tests/test_reports/
+

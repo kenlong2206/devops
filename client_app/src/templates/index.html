@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Sender</title>
+    <style>
+        #result-container {
+            height: 200px; /* Set the height of the scrollable container */
+            overflow-y: scroll; /* Enable vertical scrolling */
+            border: 1px solid #ccc; /* Optional: add a border */
+            padding: 10px; /* Optional: add padding */
+        }
+        table {
+            width: 400;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Sum Sender</h1>
+    <button onclick="startSending()">Start</button>
+    <button onclick="stopSending()">Stop</button>
+    <button onclick="resetResults()">Reset</button>
+    <br>
+    <br>
+    <label for="delay">Set Delay (seconds):</label>
+    <input type="number" id="delay" name="delay" value="1" min="0.1" step="0.1">
+    <br>
+    <br>
+    <div id="result-container">
+        <table id="result-table">
+            <thead>
+                <tr>
+                    <th>Num1</th>
+                    <th>Num2</th>
+                    <th>Operation</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody id="result-body">
+                <!-- Results will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let sending = false;
+        let delay = 1000;
+        function startSending() {
+            sending = true;
+            sendSum();
+        }
+        function stopSending() {
+            sending = false;
+        }
+        function resetResults() {
+            document.getElementById("result-body").innerHTML = '';
+        }
+        function setDelay() {
+            const delayInput = document.getElementById("delay").value;
+            delay = parseFloat(delayInput) * 1000;
+        }
+        async function sendSum() {
+            setDelay();
+            while (sending) {
+                try {
+                    const response = await fetch("/send_sums", { method: "POST" });
+                    if (!response.ok) throw new Error(`Error: ${response.statusText}`);
+                    const data = await response.json();
+                    const resultRow = document.createElement("tr");
+                    resultRow.innerHTML = `
+                        <td>${data.Num1}</td>
+                        <td>${data.Num2}</td>
+                        <td>${data.Operation}</td>
+                        <td>${data.Result}</td>
+                    `;
+                    const resultBody = document.getElementById("result-body");
+                    resultBody.appendChild(resultRow);
+                    // Scroll to the bottom
+                    const resultContainer = document.getElementById("result-container");
+                    resultContainer.scrollTop = resultContainer.scrollHeight;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                } catch (error) {
+                    console.error("Failed to send sum:", error);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

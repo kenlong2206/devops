@@ -2,8 +2,11 @@
 import os
 import subprocess
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+VERSION_FILE = os.path.abspath(os.path.join(BASE_DIR, '..', 'version.txt'))
+
 def get_version(app_name):
-    version_file = f'../{app_name}/version.txt'
+    version_file = VERSION_FILE
     try:
         with open(version_file, 'r') as file:
             version = file.read().strip()

@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  calculator_app:
+    build:
+      context: .
+      dockerfile: calculator_app/Dockerfile
+    container_name: calculator_app
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+  client_app:
+    build:
+      context: .
+      dockerfile: client_app/Dockerfile
+    container_name: client_app
+    ports:
+      - "9000:9000"
+    networks:
+      - app-network
+    depends_on:
+      - calculator_app
+    environment:
+      - CALCULATOR_URL=http://calculator_app:8000
+
+networks:
+  app-network:
+    driver: bridge
