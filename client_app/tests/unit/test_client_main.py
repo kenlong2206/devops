@@ -29,3 +29,27 @@ def test_health():
     assert "started_by" in data
     assert "git_branch" in data
 
+def test_start_sending():
+    response = client.post("/start")
+    assert response.status_code == 200
+    assert response.json() == {'status': 'started'}
+
+
+def test_stop_sending():
+    response = client.post("/stop")
+    assert response.status_code == 200
+    assert response.json() == {'status': 'stopped'}
+
+
+def test_reset():
+    response = client.post("/reset")
+    assert response.status_code == 200
+    assert response.json() == {'status': 'reset'}
+
+
+def test_set_delay():
+    response = client.post("/set_delay", data={"new_delay": 2})
+    assert response.status_code == 200
+    assert response.json() == {"status": "delay set", "delay": 2}
+
+
