@@ -9,6 +9,12 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 def setup_logging(level=logging.INFO, test=False):
 
     log_dir = os.path.join(PROJECT_ROOT, 'logs')
+
+    # Ensure the log directory exists
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+        print(f"Created directory: {log_dir}")
+
     if test:
         file = os.path.join(log_dir, 'client_test_log.txt')
     else:
