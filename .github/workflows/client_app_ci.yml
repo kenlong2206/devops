@@ -53,6 +53,7 @@ jobs:
     - name: Run tests with coverage
       run: |
         source venv/bin/activate
+        cd client_app
         python -m pytest
         ls -l client_app/tests/test_reports
 
