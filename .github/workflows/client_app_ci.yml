@@ -55,7 +55,7 @@ jobs:
         source venv/bin/activate
         cd client_app
         python -m pytest
-        ls -l client_app/tests/test_reports
+        ls -l tests/test_reports
 
 # *************************************** STATIC SCANNING ***************************************
     - name: Upload coverage to SonarCloud
