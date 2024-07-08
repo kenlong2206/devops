@@ -3,8 +3,8 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 import httpx
 import random
-from client_app.src.log import setup_logging
-from client_app.src.healthcheck import get_version, get_git_branch
+from src.log import setup_logging
+from src.healthcheck import get_version, get_git_branch
 import socket
 import os
 from datetime import datetime

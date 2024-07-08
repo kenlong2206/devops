@@ -2,8 +2,8 @@
 
 import os
 from fastapi.testclient import TestClient
-from client_app.src.main import app
-from client_app.src.log import setup_logging
+from src.main import app
+from src.log import setup_logging
 
 # Create a test client using FastAPI's TestClient
 client = TestClient(app)
