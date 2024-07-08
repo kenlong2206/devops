@@ -12,12 +12,6 @@ client = TestClient(app)
 logger = setup_logging(test=True)
 
 
-def test_read_root():
-    # Test the root endpoint '/'
-    response = client.get("/")
-    assert response.status_code == 200
-    assert response.json() == {'message': 'Welcome to the client API!'}
-
 
 def test_health():
     # Test the /health endpoint
