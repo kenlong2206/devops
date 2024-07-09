@@ -7,16 +7,16 @@ on:
       - develop
       - feature-*
       - release-*
-#    paths:
-#      - 'calculator_app/**'
+    paths:
+      - 'calculator_app/**'
   pull_request:
     branches:
       - master
       - develop
       - feature-*
       - release-*
-#    paths:
-#      - 'calculator_app/**'
+    paths:
+      - 'calculator_app/**'
 
 jobs:
   test:
@@ -68,7 +68,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.projectKey=kenlong2206_devops-calculator
+          -Dsonar.projectKey=kenlong2206_devops_calculator
           -Dsonar.organization=kenlong2206          
           -Dsonar.sources=calculator_app/src
           -Dsonar.python.version=3

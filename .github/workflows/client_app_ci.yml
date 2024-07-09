@@ -71,7 +71,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.projectKey=kenlong2206_devops-client
+          -Dsonar.projectKey=kenlong2206_devops_client
           -Dsonar.organization=kenlong2206          
           -Dsonar.sources=client_app/src
           -Dsonar.python.version=3
