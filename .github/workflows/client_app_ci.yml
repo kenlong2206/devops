@@ -7,16 +7,16 @@ on:
       - develop
       - feature-*
       - release-*
-    paths:
-      - 'client_app/**'
+#    paths:
+#      - 'client_app/**'
   pull_request:
     branches:
       - master
       - develop
       - feature-*
       - release-*
-    paths:
-      - 'client_app/**'
+#    paths:
+#      - 'client_app/**'
 
 jobs:
   test:
