@@ -51,6 +51,7 @@ jobs:
     - name: Run tests with coverage
       run: |
         source venv/bin/activate
+        pwd
         python -m pytest calculator_app/
         pwd
         ls -l
