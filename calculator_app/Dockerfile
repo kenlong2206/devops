@@ -24,7 +24,7 @@ RUN mkdir -p /app/calculator_app/logs && touch /app/calculator_app/logs/calculat
 
 # Define environment variables
 ENV PYTHONUNBUFFERED=1
-ENV PYTHONPATH=.:/app:/app/calculator_app:/app/calculator_app/src:/app/common/src
+ENV PYTHONPATH=.:/app:/app/calculator_app:/app/calculator_app/src:/app/common/src:/app/common/
 ENV STARTED_BY=docker
 
 # Expose the port your app runs on (if applicable)

@@ -80,7 +80,8 @@ jobs:
 
 # ************************************* CONTAINERISE ***************************************
     - name: Build Docker image
-      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/calculator-app:latest .
+      # run from /devops directory but with paramater to use the dockerfile in calculator_app
+      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/calculator-app:latest -f calculator_app/Dockerfile .
 
     - name: Log into Docker Hub
       uses: docker/login-action@v3
