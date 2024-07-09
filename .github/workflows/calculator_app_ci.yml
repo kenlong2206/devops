@@ -56,7 +56,6 @@ jobs:
         python -m pytest calculator_app/
         pwd
         ls -l
-        echo "aaa"
 #        ls -l calculator_app/tests/test_reports
         ls -l tests/test_reports
 
