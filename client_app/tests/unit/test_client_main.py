@@ -1,6 +1,4 @@
 # tests/unit/test_main.py
-
-import os
 from fastapi.testclient import TestClient
 from client_app.src.main import app
 from client_app.src.log import setup_logging
@@ -11,6 +9,13 @@ client = TestClient(app)
 # setup the logger to use a test file and directory
 logger = setup_logging(test=True)
 
+
+def test_read_root():
+    # Test the root endpoint '/'
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "text/html" in response.headers["content-type"]
+    assert "<title>sum sender</title>" in response.text.lower()
 
 
 def test_health():
@@ -53,3 +58,10 @@ def test_set_delay():
     assert response.json() == {"status": "delay set", "delay": 2}
 
 
+def test_send_sums():
+    # test it returns status 500 with no service up and running
+    response = client.post("/send_sums")
+    assert response.status_code == 500
+
+    # now test with a mock calculator service returning status 200
+    # tbd ...

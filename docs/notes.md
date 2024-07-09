@@ -20,7 +20,7 @@ Devops pipeline built with github actions as follows:
 
 - [x] Build
 - [x] Unit test (pytest)
-- [x] Lint
+- [x] Unit test (pytest) with mocking
 - [x] Sonar scan
 - [x] Quality gates
 - [x] Create docker image for each service
