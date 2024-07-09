@@ -53,7 +53,7 @@ jobs:
     - name: Run tests with coverage
       run: |
         source venv/bin/activate
-        cd calculator_app
+#        cd calculator_app
         python -m pytest
         ls -l tests/test_reports
       working-directory: calculator_app
