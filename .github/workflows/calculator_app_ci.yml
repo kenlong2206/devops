@@ -60,7 +60,7 @@ jobs:
 # *************************************** STATIC SCANNING ***************************************
     - name: Upload coverage to SonarCloud
       working-directory: calculator_app
-      uses: SonarSource/sonarcloud-github-action@master
+#      uses: SonarSource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
