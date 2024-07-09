@@ -52,7 +52,7 @@ jobs:
       run: |
         source venv/bin/activate
         pwd
-        python -m pytest calculator_app/
+        python -m pytest -c calculator_app/pytest.ini calculator_app/
         pwd
         ls -l
         ls -l calculator_app/tests/test_reports
