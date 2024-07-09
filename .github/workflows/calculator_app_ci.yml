@@ -45,6 +45,7 @@ jobs:
 
     - name: Create directories
       run: |
+        pwd
         mkdir -p calculator_app/tests/test_reports
         mkdir -p calculator_app/logs
 
