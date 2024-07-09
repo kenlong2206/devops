@@ -28,6 +28,7 @@ Devops pipeline built with github actions as follows:
 - [x] Docker compose to deploy multiple services
 - [x] Docker container for each service
 - [x] Integration test
+- [ ] Selenium UI test
 - [ ] Contract test
 - [ ] Performance test
 - [ ] Chaos test
@@ -96,7 +97,7 @@ ___
 
 ___
 ## Logging
-- logging setup code in `src/logging_setup.py`
+- logging setup code in `src/log.py`
 - logs written to `calculator/logs`
    - to write to logs use logger.info, .warn, .debug, .error, etc. e.g. `logger.info("Add operation")`
 
@@ -119,8 +120,13 @@ ___
 
 ___
 ## SonarCloud
+- to add a project:
+  - click '+' and `Analyse New Project` on My projects page
+  - select the project and click `Setup -> Create Project` 
+  - in `Choose your Analysis Method` select `With Github Actions`
+  - setup SONAR_TOKEN as per instructions
 - sonar properties stored in project root `sonar-project.properties`
-- login at `https://sonarcloud.io/` (select login via Github)
+- login at https://sonarcloud.io/ (select login via Github)
 - on top menu bar click `Account -> My Organisations`. Click to create an account if needed
 - on top menu bar click `+` -> `Analyse New Project`. it should list all the github projects. select the one to be analysed
   - click `My Projects` and click the project
