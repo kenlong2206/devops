@@ -55,8 +55,10 @@ jobs:
         source venv/bin/activate
         python -m pytest calculator_app/
         pwd
-        ls -l calculator_app/tests/test_reports
-        ls -l tests/test_reports        
+        ls -l
+        echo "aaa"
+#        ls -l calculator_app/tests/test_reports
+        ls -l tests/test_reports
 
 # *************************************** STATIC SCANNING ***************************************
     - name: Upload coverage to SonarCloud
