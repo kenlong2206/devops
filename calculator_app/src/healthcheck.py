@@ -1,5 +1,4 @@
 # devops/common/src/healthcheck.py
-import os
 import subprocess
 
 def get_version(app_name):
