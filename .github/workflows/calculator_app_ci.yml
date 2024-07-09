@@ -20,7 +20,6 @@ on:
 
 jobs:
   test:
-# *************************************** ENVIRONMENT SETUP ***************************************
     runs-on: ubuntu-latest
 
     steps:
@@ -55,10 +54,9 @@ jobs:
         python -m pytest calculator_app/
         pwd
         ls -l
-#        ls -l calculator_app/tests/test_reports
+        ls -l calculator_app/tests/test_reports
         ls -l tests/test_reports
 
-# *************************************** STATIC SCANNING ***************************************
     - name: Upload coverage to SonarCloud
       uses: SonarSource/sonarcloud-github-action@master
       env:
