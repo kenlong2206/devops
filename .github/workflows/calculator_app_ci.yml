@@ -68,7 +68,7 @@ jobs:
           -Dsonar.host.url=https://sonarcloud.io 
           -Dsonar.python.version=3
           -Dsonar.branch.name=${{ github.ref_name }}
-#          -Dsonar.sources=calculator_app/src/
+          -Dsonar.sources=calculator_app/src/
           -Dsonar.python.xunit.reportPath=calculator_app/tests/test_reports/xunit-result.xml
           -Dsonar.python.coverage.reportPaths=calculator_app/tests/test_reports/coverage.xml
           -Dsonar.exclusions=**/tests/**,**/__init__.py
