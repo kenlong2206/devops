@@ -55,7 +55,7 @@ jobs:
     - name: Run tests with coverage
       run: |
         source venv/bin/activate
-        echo "From devops\ run pytest in client_app\ using the pytest.ini in that directory  
+        echo "From devops\ run pytest in client_app\ using the pytest.ini in that directory"  
         python -m pytest -c client_app/pytest.ini client_app/
         echo "directory = "        
         pwd
