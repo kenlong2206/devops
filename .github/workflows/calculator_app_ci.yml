@@ -49,12 +49,13 @@ jobs:
         mkdir -p calculator_app/tests/test_reports
         mkdir -p calculator_app/logs
 
+# *************************************** UNIt TESTING ***************************************
     - name: Run tests with coverage
       run: |
         source venv/bin/activate
         python -m pytest
         ls -l tests/test_reports
-      working-directory: calculator_app
+      working-directory: calculator_app/
 
 # *************************************** STATIC SCANNING ***************************************
     - name: Upload coverage to SonarCloud
