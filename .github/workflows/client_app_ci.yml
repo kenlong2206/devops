@@ -46,6 +46,8 @@ jobs:
 
     - name: Create directories
       run: |
+        echo "directory = "        
+        pwd        
         mkdir -p client_app/tests/test_reports
         mkdir -p client_app/logs
 
@@ -53,9 +55,13 @@ jobs:
     - name: Run tests with coverage
       run: |
         source venv/bin/activate
-        cd client_app
-        python -m pytest
-        ls -l tests/test_reports
+        echo "From devops\ run pytest in client_app\ using the pytest.ini in that directory  
+        python -m pytest -c client_app/pytest.ini client_app/
+        echo "directory = "        
+        pwd
+        ls -l
+        echo "directory = calculator_app/tests/test_reports"                
+        ls -l calculator_app/tests/test_reports
 
 # *************************************** STATIC SCANNING ***************************************
     - name: Upload coverage to SonarCloud
@@ -66,13 +72,15 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.host.url=https://sonarcloud.io 
+          -Dsonar.projectKey=kenlong2206_devops-client
+          -Dsonar.organization=kenlong2206          
+          -Dsonar.sources=client_app/src
           -Dsonar.python.version=3
           -Dsonar.branch.name=${{ github.ref_name }}
-          -Dsonar.sources=client_app/src/
           -Dsonar.python.xunit.reportPath=client_app/tests/test_reports/xunit-result.xml
           -Dsonar.python.coverage.reportPaths=client_app/tests/test_reports/coverage.xml
           -Dsonar.exclusions=**/tests/**,**/__init__.py
+          -Dsonar.coverage.exclusions=**/tests/**
 
 # ************************************* CONTAINERISE ***************************************
     - name: Build Docker image

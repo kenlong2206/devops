@@ -45,6 +45,7 @@ jobs:
 
     - name: Create directories
       run: |
+        echo "directory = "        
         pwd
         mkdir -p calculator_app/tests/test_reports
         mkdir -p calculator_app/logs
@@ -52,10 +53,12 @@ jobs:
     - name: Run tests with coverage
       run: |
         source venv/bin/activate
-        pwd
+        echo "From devops\ run pytest in calculator_app\ using the pytest.ini in that directory
         python -m pytest -c calculator_app/pytest.ini calculator_app/
+        echo "directory = "        
         pwd
         ls -l
+        echo "directory = calculator_app/tests/test_reports"                
         ls -l calculator_app/tests/test_reports
 
     - name: Upload coverage to SonarCloud
