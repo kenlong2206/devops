@@ -15,8 +15,8 @@ on:
       - develop
       - feature-*
       - release-*
-    paths:
-      - 'calculator_app/**'
+#    paths:
+#      - 'calculator_app/**'
 
 jobs:
   test:
