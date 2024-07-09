@@ -7,16 +7,16 @@ on:
       - develop
       - feature-*
       - release-*
-#    paths:
-#      - 'calculator_app/**'
+    paths:
+      - 'calculator_app/**'
   pull_request:
     branches:
       - master
       - develop
       - feature-*
       - release-*
-#    paths:
-#      - 'calculator_app/**'
+    paths:
+      - 'calculator_app/**'
 
 jobs:
   test:
@@ -59,6 +59,7 @@ jobs:
 
 # *************************************** STATIC SCANNING ***************************************
     - name: Upload coverage to SonarCloud
+      working-directory: calculator_app
       uses: SonarSource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
