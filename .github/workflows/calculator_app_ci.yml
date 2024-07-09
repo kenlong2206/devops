@@ -56,6 +56,7 @@ jobs:
         cd calculator_app
         python -m pytest
         ls -l tests/test_reports
+      working-directory: calculator_app
 
 # *************************************** STATIC SCANNING ***************************************
     - name: Upload coverage to SonarCloud
@@ -68,11 +69,11 @@ jobs:
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.projectKey=kenlong2206_devops-calculator
           -Dsonar.organization=kenlong2206          
-          -Dsonar.sources=calculator_app/src
+          -Dsonar.sources=src
           -Dsonar.python.version=3
           -Dsonar.branch.name=${{ github.ref_name }}
-          -Dsonar.python.xunit.reportPath=calculator_app/tests/test_reports/xunit-result.xml
-          -Dsonar.python.coverage.reportPaths=calculator_app/tests/test_reports/coverage.xml
+          -Dsonar.python.xunit.reportPath=tests/test_reports/xunit-result.xml
+          -Dsonar.python.coverage.reportPaths=tests/test_reports/coverage.xml
           -Dsonar.exclusions=**/tests/**,**/__init__.py
           -Dsonar.coverage.exclusions=**/tests/**
 
