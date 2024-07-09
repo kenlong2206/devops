@@ -53,9 +53,8 @@ jobs:
     - name: Run tests with coverage
       run: |
         source ../venv/bin/activate
-        python -m pytest
+        python -m pytest calculator_app/
         ls -l tests/test_reports
-      working-directory: calculator_app/
 
 # *************************************** STATIC SCANNING ***************************************
     - name: Upload coverage to SonarCloud
