@@ -56,7 +56,6 @@ jobs:
         pwd
         ls -l
         ls -l calculator_app/tests/test_reports
-        ls -l tests/test_reports
 
     - name: Upload coverage to SonarCloud
       uses: SonarSource/sonarcloud-github-action@master
