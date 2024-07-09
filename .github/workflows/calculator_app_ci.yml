@@ -49,7 +49,6 @@ jobs:
         mkdir -p calculator_app/tests/test_reports
         mkdir -p calculator_app/logs
 
-# *************************************** UNIT TESTING ***************************************
     - name: Run tests with coverage
       run: |
         source venv/bin/activate
