@@ -66,8 +66,6 @@ jobs:
       with:
         args: >
           -Dsonar.host.url=https://sonarcloud.io
-          -Dsonar.projectKey=your_organization_calculator_app
-          -Dsonar.organization=your_organization
           -Dsonar.sources=src
           -Dsonar.python.version=3
           -Dsonar.branch.name=${{ github.ref_name }}
