@@ -7,16 +7,16 @@ on:
       - develop
       - feature-*
       - release-*
-#    paths:
-#      - 'client_app/**'
+    paths:
+      - 'client_app/**'
   pull_request:
     branches:
       - master
       - develop
       - feature-*
       - release-*
-#    paths:
-#      - 'client_app/**'
+    paths:
+      - 'client_app/**'
 
 jobs:
   test:
@@ -109,6 +109,8 @@ jobs:
       run: |
         pwd
         ls -la
+        echo "client_app/tests/integration_tests"
+        ls -la client_app/tests/integration_tests
         newman run './client_app/tests/integration/client_integration_tests.postman_collection.json' --reporters html --reporter-html-export './client_app/tests/test_reports/client_integration_tests_report.html'
 
 # *************************************** UPLOAD ARTIFACTS ***************************************
