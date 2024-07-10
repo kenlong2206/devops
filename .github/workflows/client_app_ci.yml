@@ -8,7 +8,7 @@ on:
       - feature-*
       - release-*
     paths:
-      - 'client_app/**'
+      - 'client_app/*'
   pull_request:
     branches:
       - master
@@ -16,7 +16,7 @@ on:
       - feature-*
       - release-*
     paths:
-      - 'client_app/**'
+      - 'client_app/*'
 
 jobs:
   test:
