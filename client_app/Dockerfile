@@ -26,6 +26,7 @@ RUN mkdir -p /app/client_app/logs && touch /app/client_app/logs/client_log.txt &
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=.:/app:/app/client_app:/app/client_app/src:/app/common/src
 ENV STARTED_BY=docker
+ENV baseClientUrl=http://127.0.0.1:9000
 
 # Expose the port your app runs on (if applicable)
 EXPOSE 9000

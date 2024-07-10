@@ -26,6 +26,7 @@ RUN mkdir -p /app/calculator_app/logs && touch /app/calculator_app/logs/calculat
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=.:/app:/app/calculator_app:/app/calculator_app/src:/app/common/src:/app/common/
 ENV STARTED_BY=docker
+ENV baseCalculatorUrl=http://127.0.0.1:9000
 
 # Expose the port your app runs on (if applicable)
 EXPOSE 8000
