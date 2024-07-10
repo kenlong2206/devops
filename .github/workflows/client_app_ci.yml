@@ -106,7 +106,7 @@ jobs:
         npm install -g newman-reporter-html
 
     - name: Run Postman tests against docker container
-      run: newman run './client_app/tests/integration/calculator_integration_tests.postman_collection.json' --reporters html --reporter-html-export './client_app/tests/test_reports/calculator_integration_tests_report.html'
+      run: newman run './client_app/tests/integration/client_integration_tests.postman_collection.json' --reporters html --reporter-html-export './client_app/tests/test_reports/client_integration_tests_report.html'
 
 # *************************************** UPLOAD ARTIFACTS ***************************************
     - name: Upload test reports
