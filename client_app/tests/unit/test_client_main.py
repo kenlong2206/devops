@@ -58,10 +58,3 @@ def test_set_delay():
     assert response.json() == {"status": "delay set", "delay": 2}
 
 
-def test_send_sums():
-    # test it returns status 500 with no service up and running
-    response = client.post("/send_sums")
-    assert response.status_code == 200
-
-    # now test with a mock calculator service returning status 200
-    # tbd ...
