@@ -106,7 +106,6 @@ jobs:
         npm install -g newman-reporter-html
 
     - name: Run Postman tests against docker container
-      env:
       run: |
         pwd
         ls -la
