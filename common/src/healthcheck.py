@@ -1,8 +1,12 @@
 # devops/common/src/healthcheck.py
+import os
 import subprocess
 
+PWD = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(PWD, '..', '..'))
+
 def get_version(app_name):
-    version_file = f'../{app_name}/version.txt'
+    version_file = os.path.abspath(os.path.join(BASE_DIR, app_name, 'version.txt'))
     try:
         with open(version_file, 'r') as file:
             version = file.read().strip()

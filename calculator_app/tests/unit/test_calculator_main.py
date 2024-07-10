@@ -3,13 +3,13 @@
 import os
 from fastapi.testclient import TestClient
 from calculator_app.src.main import app
-from calculator_app.src.log import setup_logging
+from common.src.log import setup_logging
 
 # Create a test client using FastAPI's TestClient
 client = TestClient(app)
 
 # setup the logger to use a test file and directory
-logger = setup_logging(test=True)
+logger = setup_logging(test=True, app_name='calculator_app')
 
 
 def test_read_root():

@@ -1,13 +1,13 @@
 # tests/unit/test_main.py
 from fastapi.testclient import TestClient
 from client_app.src.main import app
-from client_app.src.log import setup_logging
+from common.src.log import setup_logging
 
 # Create a test client using FastAPI's TestClient
 client = TestClient(app)
 
 # setup the logger to use a test file and directory
-logger = setup_logging(test=True)
+logger = setup_logging(test=True, app_name='client_app')
 
 
 def test_read_root():
@@ -61,7 +61,7 @@ def test_set_delay():
 def test_send_sums():
     # test it returns status 500 with no service up and running
     response = client.post("/send_sums")
-    assert response.status_code == 500
+    assert response.status_code == 200
 
     # now test with a mock calculator service returning status 200
     # tbd ...

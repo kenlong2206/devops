@@ -3,12 +3,12 @@ import os
 
 
 # Default project root for non-testing environment
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 
 
-def setup_logging(level=logging.INFO, test=False):
+def setup_logging(level=logging.INFO, test=False, app_name=''):
 
-    log_dir = os.path.join(PROJECT_ROOT, 'logs')
+    log_dir = os.path.join(PROJECT_ROOT, app_name, 'logs')
 
     # Ensure the log directory exists
     if not os.path.exists(log_dir):
@@ -16,9 +16,9 @@ def setup_logging(level=logging.INFO, test=False):
         print(f"Created directory: {log_dir}")
 
     if test:
-        file = os.path.join(log_dir, 'calculator_test_log.txt')
+        file = os.path.join(log_dir, app_name + '_test_log.txt')
     else:
-        file = os.path.join(log_dir, 'calculator_log.txt')
+        file = os.path.join(log_dir, app_name + '_log.txt')
 
     # Ensure the log file exists
     if not os.path.exists(file):

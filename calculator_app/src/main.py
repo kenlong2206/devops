@@ -1,14 +1,14 @@
 # main.py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from calculator_app.src.log import setup_logging
-from calculator_app.src.healthcheck import get_version, get_git_branch
+from common.src.log import setup_logging
+from common.src.healthcheck import get_version, get_git_branch
 from datetime import datetime
 import os  # to run os commands
 import socket  # to get hostname
 
 # Set up logging
-logger = setup_logging()
+logger = setup_logging(app_name='calculator_app')
 
 # Set start time as a global variable since it is set once when the application starts
 start_time = datetime.now()

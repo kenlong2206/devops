@@ -3,8 +3,8 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 import httpx
 import random
-from client_app.src.log import setup_logging
-from client_app.src.healthcheck import get_version, get_git_branch
+from common.src.log import setup_logging
+from common.src.healthcheck import get_version, get_git_branch
 import socket
 import os
 from datetime import datetime
@@ -19,7 +19,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 CALCULATOR_URL = os.getenv("CALCULATOR_URL", "http://127.0.0.1:8000")
 
 # Set up logging
-logger = setup_logging()
+logger = setup_logging(app_name='client_app')
 
 # Create FastAPI app
 app = FastAPI()
