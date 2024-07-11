@@ -120,8 +120,8 @@ jobs:
         ls -la
         echo "tests/integration"
         ls -la tests/integration
-        newman run 'tests/integration/client_app_integration_tests.postman_collection.json' -e 'tests/integration/devops_env.postman_environment.json' --reporters html --reporter-html-export 'tests/test_reports/client_app_integration_tests_report.html'
-        newman run 'tests/integration/calculator_app_integration_tests.postman_collection.json' -e 'tests/integration/devops_env.postman_environment.json' --reporters html --reporter-html-export 'tests/test_reports/calculator_app_integration_tests_report.html'
+        npx newman run 'tests/integration/client_app_integration_tests.postman_collection.json' -e 'tests/integration/devops_env.postman_environment.json' --reporters cli,html --reporter-html-export 'tests/test_reports/client_app_integration_tests_report.html'
+        npx newman run 'tests/integration/calculator_app_integration_tests.postman_collection.json' -e 'tests/integration/devops_env.postman_environment.json' --reporters cli,html --reporter-html-export 'tests/test_reports/calculator_app_integration_tests_report.html'
         echo "tests/test_reports"
         ls -la tests/test_reports        
 
