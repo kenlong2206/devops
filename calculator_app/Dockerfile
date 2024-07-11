@@ -15,6 +15,7 @@ RUN pip install --no-cache-dir -r /app/calculator_app/requirements.txt
 # Copy the entire project into the container
 COPY calculator_app /app/calculator_app
 COPY common /app/common
+COPY tests /app/tests
 
 # Create a volume to persist logs
 VOLUME ["/app/calculator_app/logs"]

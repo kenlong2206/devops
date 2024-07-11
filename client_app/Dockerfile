@@ -15,6 +15,7 @@ RUN pip install --no-cache-dir -r /app/client_app/requirements.txt
 # Copy the entire project into the container
 COPY client_app /app/client_app
 COPY common /app/common
+COPY tests app/tests
 
 # Create a volume to persist logs
 VOLUME ["/app/client_app/logs"]
