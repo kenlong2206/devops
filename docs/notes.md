@@ -97,8 +97,8 @@ ___
 
 ___
 ## Logging
-- logging setup code in `src/log.py`
-- logs written to `calculator/logs`
+- logging setup code in `common/src/log.py`
+- logs written to `calculator_app/logs`
    - to write to logs use logger.info, .warn, .debug, .error, etc. e.g. `logger.info("Add operation")`
 
 ___

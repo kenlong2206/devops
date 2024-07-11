@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  client_app:
+# use the new version of client_app
+    image: kenlongdocker/client_app:latest
+    container_name: client_app
+    ports:
+      - "9000:9000"
+    networks:
+      - app-network
+
+  calculator_app:
+# use the production version of calculator_app
+    image: kenlongdocker/calculator_app:production
+    container_name: calculator_app
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

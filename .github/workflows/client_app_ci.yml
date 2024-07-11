@@ -94,12 +94,11 @@ jobs:
     - name: Push Docker image to Docker Hub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/client-app:latest
 
-    - name: Pull Docker image from Docker Hub, run it and verify it is running correctly
-      run: |
-        docker pull ${{ secrets.DOCKERHUB_USERNAME }}/client-app:latest
-        docker run -d -p 9000:9000 ${{ secrets.DOCKERHUB_USERNAME }}/client-app:latest
-
 # *************************************** INTEGRATION TESTING ***************************************
+
+    - name: Run the services
+      run: docker-compose -f docker-compose.new_client_app.yml up --abort-on-container-exit
+
     - name: Install Newman
       run: |
         npm install -g newman
@@ -112,6 +111,7 @@ jobs:
         echo "tests/integration"
         ls -la tests/integration
         newman run 'tests/integration/client_app_integration_tests.postman_collection.json' -e 'tests/integration/devops_env.postman_environment.json' --reporters html --reporter-html-export 'tests/test_reports/client_app_integration_tests_report.html'
+        newman run 'tests/integration/calculator_app_integration_tests.postman_collection.json' -e 'tests/integration/devops_env.postman_environment.json' --reporters html --reporter-html-export 'tests/test_reports/calculator_app_integration_tests_report.html'
         echo "tests/test_reports"
         ls -la tests/test_reports        
 
