@@ -95,6 +95,11 @@ jobs:
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/client-app:latest
 
 # *************************************** INTEGRATION TESTING ***************************************
+    - name: Pull the latest client-app Docker image
+      run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/client-app:latest
+
+    - name: Pull the production calculator-app Docker image
+      run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/calculator-app:production
 
     - name: Run the services
       run: docker-compose -f docker-compose.new_client_app.yml up --abort-on-container-exit
