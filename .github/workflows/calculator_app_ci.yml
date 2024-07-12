@@ -92,16 +92,28 @@ jobs:
     - name: Push Docker image to Docker Hub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/calculator_app:latest
 
-    - name: Pull Docker image from Docker Hub, run it and verify it is running correctly
-      run: |
-        docker pull ${{ secrets.DOCKERHUB_USERNAME }}/calculator_app:latest
-#        docker run -d -p 8000:8000 ${{ secrets.DOCKERHUB_USERNAME }}/calculator_app:latest
-
 # *************************************** INTEGRATION TESTING ***************************************
+    - name: Pull the latest client-app Docker image
+      run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/calculator_app:latest
+
+    - name: Pull the production calculator-app Docker image
+      run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/client_app:production
+
+    - name: Run the services
+      run: |
+        docker-compose -f docker-compose.new_client_app.yml up -d
+        docker ps
+
+
     - name: Install Newman
       run: |
         npm install -g newman
         npm install -g newman-reporter-html
+
+    - name: Wait for services to be ready
+      run: |
+        echo "Waiting for services to be ready..."
+        sleep 5  
 
     - name: Run Postman tests against docker container
       run: |
@@ -109,9 +121,13 @@ jobs:
         ls -la
         echo "tests/integration"
         ls -la tests/integration        
-        newman run 'tests/integration/calculator_app_integration_tests.postman_collection.json' -e 'tests/integration/devops_env.postman_environment.json' --reporters html --reporter-html-export 'tests/test_reports/calculator_app_integration_tests_report.html'
+        npx newman run 'tests/integration/client_app_integration_tests.postman_collection.json' -e 'tests/integration/devops_env.postman_environment.json' --reporters cli,html --reporter-html-export 'tests/test_reports/client_app_integration_tests_report.html'
+        npx newman run 'tests/integration/calculator_app_integration_tests.postman_collection.json' -e 'tests/integration/devops_env.postman_environment.json' --reporters cli,html --reporter-html-export 'tests/test_reports/calculator_app_integration_tests_report.html'
         echo "tests/test_reports"
         ls -la tests/test_reports        
+
+    - name: Stop and clean up docker-compose services
+      run: docker-compose -f docker-compose.new_client_app.yml down
 
 # *************************************** UPLOAD ARTIFACTS ***************************************
     - name: Upload test reports
