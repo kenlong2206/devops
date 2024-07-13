@@ -103,6 +103,7 @@ jobs:
 
     - name: Run the services
       run: |
+# use the docker-compose file to run the latest client_app with the production version of calculator_app
         docker-compose -f docker-compose.new_client_app.yml up -d
         docker ps
       

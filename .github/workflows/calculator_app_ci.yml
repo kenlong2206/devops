@@ -93,15 +93,16 @@ jobs:
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/calculator_app:latest
 
 # *************************************** INTEGRATION TESTING ***************************************
-    - name: Pull the latest client-app Docker image
+    - name: Pull the latest calculator_app Docker image
       run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/calculator_app:latest
 
-    - name: Pull the production calculator-app Docker image
+    - name: Pull the production client_app Docker image
       run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/client_app:production
 
     - name: Run the services
       run: |
-        docker-compose -f docker-compose.new_client_app.yml up -d
+# use the docker-compose file to run the latest calculator_app with the production version of client_app
+        docker-compose -f docker-compose.new_calculator_app.yml up -d
         docker ps
 
 
