@@ -13,7 +13,7 @@ def get_version(app_name):
             version = file.read().strip()
     except FileNotFoundError:
         version = f"version file not found: {version_file}"
-    return version
+    return f"{version} file location {version_file}"
 
 
 def get_git_branch():
