@@ -99,9 +99,9 @@ jobs:
     - name: Pull the production client_app Docker image
       run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/client_app:production
 
+# use the docker-compose file to run the latest calculator_app with the production version of client_app
     - name: Run the services
       run: |
-# use the docker-compose file to run the latest calculator_app with the production version of client_app
         docker-compose -f docker-compose.new_calculator_app.yml up -d
         docker ps
 
