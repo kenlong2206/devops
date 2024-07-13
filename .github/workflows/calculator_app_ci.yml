@@ -81,7 +81,7 @@ jobs:
 # ************************************* CONTAINERISE ***************************************
     - name: Build Docker image
       # run from /devops directory but with paramater to use the dockerfile in calculator_app
-      run: docker build --build-arg BUILD_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --build-arg BUILDER=${{ github.actor }} -t ${{ secrets.DOCKERHUB_USERNAME }}/calculator_app:latest -f calculator_app/Dockerfile .
+      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/calculator_app:latest -f calculator_app/Dockerfile .
 
     - name: Log into Docker Hub
       uses: docker/login-action@v3

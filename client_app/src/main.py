@@ -113,16 +113,23 @@ def health():
     hostname = socket.gethostname()
     started_by = os.getenv('STARTED_BY', 'unknown_user')  # default to unknown_user if env variable not set
 
+    if started_by == "docker":
+        host = "docker_container_id"
+        git_branch = "n/a"
+    else:
+        host = "hostname"
+        git_branch = get_git_branch()
+
     health_info = {
         "status": "OK",
         "app_name": "client_app",
         "version": version,
         "uptime": str(uptime),
         "started_time": start_time.strftime("%Y-%m-%d %H:%M:%S"),
-        "hostname": hostname,
         "environment": os.getenv('ENVIRONMENT', 'development'),
         "started_by": started_by,
-        "git_branch": git_branch
+        "git_branch": git_branch,
+        host: hostname
     }
 
     return health_info

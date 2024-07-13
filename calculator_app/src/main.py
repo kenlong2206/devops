@@ -36,13 +36,9 @@ def health():
 
     if started_by == "docker":
         host = "docker_container_id"
-        build_time = os.getenv('BUILD_TIME', 'unknown')
-        builder = os.getenv('BUILDER', 'unknown')
         git_branch = "n/a"
     else:
         host = "hostname"
-        build_time = "n/aaaa"
-        builder = "n/a"
         git_branch = get_git_branch()
 
     health_info = {
@@ -54,9 +50,7 @@ def health():
         "environment": os.getenv('ENVIRONMENT', 'development'),
         "started_by": started_by,
         "git_branch": git_branch,
-        host: hostname,
-        "docker build_time": build_time,
-        "docker_builder": builder
+        host: hostname
     }
 
     return health_info

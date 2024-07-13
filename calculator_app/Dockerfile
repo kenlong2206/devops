@@ -29,12 +29,6 @@ ENV PYTHONPATH=.:/app:/app/calculator_app:/app/calculator_app/src:/app/common/sr
 ENV STARTED_BY=docker
 ENV baseCalculatorUrl=http://127.0.0.1:9000
 
-# Set build-time metadata
-ARG BUILD_TIME
-ARG BUILDER
-LABEL build_time=$BUILD_TIME
-LABEL builder=$BUILDER
-
 # Expose the port your app runs on (if applicable)
 EXPOSE 8000
 
