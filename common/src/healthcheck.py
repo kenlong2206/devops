@@ -2,6 +2,7 @@
 import os
 import subprocess
 
+
 PWD = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.abspath(os.path.join(PWD, '..', '..'))
 
@@ -11,7 +12,7 @@ def get_version(app_name):
         with open(version_file, 'r') as file:
             version = file.read().strip()
     except FileNotFoundError:
-        version = 'version file not found'
+        version = f"version file not found: {version_file}"
     return version
 
 
