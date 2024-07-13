@@ -29,11 +29,21 @@ class CalculationRequest(BaseModel):
 def health():
     logger.info("Health-check")
     version = get_version('calculator_app')  # set in version.txt file
-    git_branch = get_git_branch()
     current_time = datetime.now()
     uptime = current_time - start_time
     hostname = socket.gethostname()
     started_by = os.getenv('STARTED_BY', 'unknown_user')  # default to unknown_user if env variable not set
+
+    if started_by == "docker":
+        host = "docker_container_id"
+        build_time = os.getenv('BUILD_TIME', 'unknown')
+        builder = os.getenv('BUILDER', 'unknown')
+        git_branch = "n/a"
+    else:
+        host = "hostname"
+        build_time = "n/aaaa"
+        builder = "n/a"
+        git_branch = get_git_branch()
 
     health_info = {
         "status": "OK",
@@ -41,10 +51,12 @@ def health():
         "version": version,
         "uptime": str(uptime),
         "started_time": start_time.strftime("%Y-%m-%d %H:%M:%S"),
-        "hostname": hostname,
         "environment": os.getenv('ENVIRONMENT', 'development'),
         "started_by": started_by,
-        "git_branch": git_branch
+        "git_branch": git_branch,
+        host: hostname,
+        "docker build_time": build_time,
+        "docker_builder": builder
     }
 
     return health_info
