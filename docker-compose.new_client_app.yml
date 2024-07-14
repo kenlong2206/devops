@@ -2,16 +2,16 @@ version: '3.8'
 
 services:
   client_app:
-# use the new version of client_app
     image: kenlongdocker/client_app:latest
     container_name: client_app
     ports:
       - "9000:9000"
+    environment:
+      - CALCULATOR_URL=http://calculator_app:8000  # Use the service name as hostname
     networks:
       - app-network
 
   calculator_app:
-# use the production version of calculator_app
     image: kenlongdocker/calculator_app:production
     container_name: calculator_app
     ports:

@@ -21,7 +21,7 @@ COPY tests /app/tests
 VOLUME ["/app/calculator_app/logs"]
 
 # Ensure the log directory and file exist and set appropriate permissions
-RUN mkdir -p /app/calculator_app/logs && touch /app/calculator_app/logs/calculator_log.txt && chmod -R 777 /app/calculator_app/logs
+RUN mkdir -p /app/calculator_app/logs && touch /app/calculator_app/logs/calculator_app_log.txt && chmod -R 777 /app/calculator_app/logs
 
 # Define environment variables
 ENV PYTHONUNBUFFERED=1

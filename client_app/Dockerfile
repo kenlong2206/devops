@@ -15,13 +15,13 @@ RUN pip install --no-cache-dir -r /app/client_app/requirements.txt
 # Copy the entire project into the container
 COPY client_app /app/client_app
 COPY common /app/common
-COPY tests app/tests
+COPY tests /app/tests
 
 # Create a volume to persist logs
 VOLUME ["/app/client_app/logs"]
 
 # Ensure the log directory and file exist and set appropriate permissions
-RUN mkdir -p /app/client_app/logs && touch /app/client_app/logs/client_log.txt && chmod -R 777 /app/client_app/logs
+RUN mkdir -p /app/client_app/logs && touch /app/client_app/logs/client_app_log.txt && chmod -R 777 /app/client_app/logs
 
 # Define environment variables
 ENV PYTHONUNBUFFERED=1

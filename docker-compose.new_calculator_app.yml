@@ -1,7 +1,4 @@
-version: '3.8'
-
 services:
-# use the production version of client_app
   client_app:
     image: kenlongdocker/client_app:production
     container_name: client_app
@@ -10,7 +7,6 @@ services:
     networks:
       - app-network
 
-# use the new version of the calculator_app
   calculator_app:
     image: kenlongdocker/calculator_app:latest
     container_name: calculator_app
@@ -18,6 +14,45 @@ services:
       - "8000:8000"
     networks:
       - app-network
+
+#  selenium-hub:
+#    image: selenium/hub:latest
+#    ports:
+#      - "4444:4444"
+#    depends_on:
+#      - client_app
+#    environment:
+#      - SE_EVENT_BUS_HOST=selenium-hub
+#      - SE_EVENT_BUS_PUBLISH_PORT=4442
+#      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+#    networks:
+#      - app-network
+#
+#  chrome-node:
+#    image: selenium/node-chrome:latest
+#    volumes:
+#      - /dev/shm:/dev/shm
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - SE_EVENT_BUS_HOST=selenium-hub
+#      - SE_EVENT_BUS_PUBLISH_PORT=4442
+#      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+#    networks:
+#      - app-network
+#
+#  firefox-node:
+#    image: selenium/node-firefox:latest
+#    volumes:
+#      - /dev/shm:/dev/shm
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - SE_EVENT_BUS_HOST=selenium-hub
+#      - SE_EVENT_BUS_PUBLISH_PORT=4442
+#      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+#    networks:
+#      - app-network
 
 networks:
   app-network:

@@ -34,6 +34,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # Global variables
 sending_sums = False
 delay = 1
@@ -42,6 +43,7 @@ results = []
 
 # Set start time as a global variable since it is set once when the application starts
 start_time = datetime.now()
+
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
@@ -82,10 +84,12 @@ async def send_sums():
     num2 = random.randint(0, 1000)
     operation = random.choice(operations)
     logger.info(f"Received send_sums request: num1={num1}, num2={num2}, operation={operation}")
+    request_url = f"{calculator_url}/calculate"
+    logger.info(f"Sending request to: {request_url}")
     async with httpx.AsyncClient() as client:
         try:
             response = await client.post(
-                f"{CALCULATOR_URL}/calculate",
+                f"{calculator_url}/calculate",
                 json={"num1": num1, "num2": num2, "operation": operation}
             )
             result = response.json().get("result")
@@ -107,7 +111,6 @@ async def send_sums():
 def health():
     logger.info("Health-check")
     version = get_version('client_app')  # set in version.txt file
-    git_branch = get_git_branch()
     current_time = datetime.now()
     uptime = current_time - start_time
     hostname = socket.gethostname()
@@ -137,6 +140,8 @@ def health():
 @app.get("/results", response_class=JSONResponse)
 async def get_results():
     return {"results": results}
+
+
 
 if __name__ == "__main__":
     import uvicorn
