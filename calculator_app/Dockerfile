@@ -23,11 +23,17 @@ VOLUME ["/app/calculator_app/logs"]
 # Ensure the log directory and file exist and set appropriate permissions
 RUN mkdir -p /app/calculator_app/logs && touch /app/calculator_app/logs/calculator_app_log.txt && chmod -R 777 /app/calculator_app/logs
 
+# change permissions to run selenium tests
+RUN chmod 777 /app/tests/selenium/
+
 # Define environment variables
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=.:/app:/app/calculator_app:/app/calculator_app/src:/app/common/src:/app/common/
 ENV STARTED_BY=docker
 ENV baseCalculatorUrl=http://127.0.0.1:9000
+ENV SELENIUM_HUB_URL=http://selenium-hub:4444/wd/hub
+ENV CLIENT_APP_URL=http://client_app:9000
+ENV CALCULATOR_APP_URL=http://calculator_app:8000
 
 # Expose the port your app runs on (if applicable)
 EXPOSE 8000

@@ -16,7 +16,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # get the URL for the calculator_app service from the environment variable set in the docker-compose file
 # if the environment variable is not set use the default localhost
-CALCULATOR_URL = os.getenv("CALCULATOR_URL", "http://127.0.0.1:8000")
+calculator_url = os.getenv("CALCULATOR_APP_URL", "http://127.0.0.1:8000")
 
 # Set up logging
 logger = setup_logging(app_name='client_app')
@@ -49,12 +49,14 @@ start_time = datetime.now()
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "results": results})
 
+
 @app.post("/start")
 async def start_sending():
     global sending_sums
     sending_sums = True
     logger.info("Started sending sums to calculator_app")
     return {"status": "started"}
+
 
 @app.post("/stop")
 async def stop_sending():
@@ -63,12 +65,14 @@ async def stop_sending():
     logger.info("Stopped sending sums to calculator_app")
     return {"status": "stopped"}
 
+
 @app.post("/reset")
 async def reset():
     global results
     results = []
     logger.info("Reset results list")
     return {"status": "reset"}
+
 
 @app.post("/set_delay")
 async def set_delay(new_delay: float = Form(...)):
@@ -77,9 +81,9 @@ async def set_delay(new_delay: float = Form(...)):
     logger.info(f"Set delay between sums to {delay} seconds")
     return {"status": "delay set", "delay": delay}
 
+
 @app.post("/send_sums")
 async def send_sums():
-    calculator_url = CALCULATOR_URL
     num1 = random.randint(0, 1000)
     num2 = random.randint(0, 1000)
     operation = random.choice(operations)
@@ -106,6 +110,7 @@ async def send_sums():
         except Exception as e:
             logger.error(f"Error: {e}")
             raise HTTPException(status_code=500, detail="Error processing request")
+
 
 @app.get("/health")
 def health():
@@ -137,10 +142,10 @@ def health():
 
     return health_info
 
+
 @app.get("/results", response_class=JSONResponse)
 async def get_results():
     return {"results": results}
-
 
 
 if __name__ == "__main__":
