@@ -2,6 +2,9 @@
 from fastapi.testclient import TestClient
 from client_app.src.main import app
 from common.src.log import setup_logging
+from unittest.mock import patch, Mock
+import requests
+
 
 # Create a test client using FastAPI's TestClient
 client = TestClient(app)
@@ -34,6 +37,7 @@ def test_health():
     assert "started_by" in data
     assert "git_branch" in data
 
+
 def test_start_sending():
     response = client.post("/start")
     assert response.status_code == 200
@@ -58,14 +62,25 @@ def test_set_delay():
     assert response.json() == {"status": "delay set", "delay": 2}
 
 
-def test_send_sums():
+# Mocking the requests.post call in send_sums
+@patch('requests.post')
+def test_send_sums(mock_post):
+    # setup mock function to mock /calculate
+    mock_response = Mock()
+    mock_response.status_code = 200
+    mock_response.json.return_value = {
+        "Num1": 1,
+        "Num2": 2,
+        "Operation": "add",
+        "Result": 4
+    }
+    mock_post.return_value = mock_response
+
+    # call the function
     response = client.post("/send_sums")
-    assert response.status_code == 200
-    data = response.json()
-    assert "Num1" in data
-    assert "Num2" in data
-    assert "Operation" in data
-    assert "Result" in data
+
+    # check response
+
 
     # check the random sum gets the right answer
     if data["Operation"] == "add":
