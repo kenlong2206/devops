@@ -58,3 +58,23 @@ def test_set_delay():
     assert response.json() == {"status": "delay set", "delay": 2}
 
 
+def test_send_sums():
+    response = client.post("/send_sums")
+    assert response.status_code == 200
+    data = response.json()
+    assert "Num1" in data
+    assert "Num2" in data
+    assert "Operation" in data
+    assert "Result" in data
+
+    # check the random sum gets the right answer
+    if data["Operation"] == "add":
+        test_result = data["Num1"] + data["Num2"]
+    elif data["Operation"] == "subtract":
+        test_result = data["Num1"] - data["Num2"]
+    if data["Operation"] == "multiply":
+        test_result = data["Num1"] * data["Num2"]
+    if data["Operation"] == "divide":
+        test_result = data["Num1"] / data["Num2"]
+
+    assert data["Result"] == test_result
