@@ -80,7 +80,12 @@ def test_send_sums(mock_post):
     response = client.post("/send_sums")
 
     # check response
-
+    assert response.status_code == 200
+    data = response.json()
+    assert "Num1" in data
+    assert "Num2" in data
+    assert "Operation" in data
+    assert "Result" in data
 
     # check the random sum gets the right answer
     if data["Operation"] == "add":
