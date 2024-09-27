@@ -10,7 +10,7 @@ import os
 from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware
 
-# Determine the base directory dynamically
+# Determine base directory dynamically
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
