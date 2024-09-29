@@ -101,6 +101,13 @@ jobs:
     - name: Pull the production calculator-app Docker image
       run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/calculator_app:production
 
+# Install Docker Compose
+    - name: Install Docker Compose
+      run: |
+        sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        sudo chmod +x /usr/local/bin/docker-compose
+        docker-compose --version
+
 # use the docker-compose file to run the latest client_app with the production version of calculator_app
     - name: Run the services
       run: |
